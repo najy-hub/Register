@@ -1,13 +1,12 @@
-<form action="https://docs.google.com/forms/d/e/12R4_Cj0ihZ2B3-g3n7JI3Yhu6c1y7E_zZnTWQSWfa0o/formResponse" method="POST" target="hidden_iframe">
-  <label>اسمك الكامل:</label><br>
-  <input type="text" name="entry.2005620554" required><br><br>
+<form action="https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbyMxL59lIX3B_J-HDwZ_7m1vy8zqEVN0Fg-76ugvfWpPGBu0o0jfAgxbm1ErTofqyDXjg/exec/exec" method="POST">
+  <label>الاسم:</label><br>
+  <input name="name" required><br><br>
 
-  <label>بريدك الإلكتروني:</label><br>
-  <input type="email" name="entry.1045781291" required><br><br>
+  <label>البريد الإلكتروني:</label><br>
+  <input type="email" name="email" required><br><br>
 
   <label>رقم الهاتف:</label><br>
-  <input type="tel" name="entry.1166974658"><br><br>
+  <input name="phone"><br><br>
 
-  <button type="submit">سجّل الآن</button>
+  <button type="submit">إرسال</button>
 </form>
-<iframe name="hidden_iframe" style="display:none;"></iframe>
