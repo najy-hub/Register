@@ -1,4 +1,4 @@
-<form action="https://docs.google.com/forms/d/e/12R4_Cj0ihZ2B3-g3n7JI3Yhu6c1y7E_zZnTWQSWfa0o/edit#responses/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+<form action="https://docs.google.com/forms/d/e/12R4_Cj0ihZ2B3-g3n7JI3Yhu6c1y7E_zZnTWQSWfa0o/edit#responses" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
   <label>الاسم الكامل:</label><br>
   <input type="text" name="entry.2005620554" required><br><br>
 
