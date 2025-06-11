@@ -1,4 +1,4 @@
-<form action="https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbyMxL59lIX3B_J-HDwZ_7m1vy8zqEVN0Fg-76ugvfWpPGBu0o0jfAgxbm1ErTofqyDXjg/exec/exec" method="POST">
+<form action="https://script.google.com/macros/s/AKfycbxPvx5CXY-evqeSV6ruuTVIL74Pn1b-ZUOmGOLoBboNCaI1B-5mZ1nYL639Hj0mIN-X/exec" method="POST">
   <label>الاسم:</label><br>
   <input name="name" required><br><br>
 
