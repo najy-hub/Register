@@ -90,7 +90,7 @@
 
   <div class="container">
     <h2>سجّل في الدورة التدريبية</h2>
-    <form id="leadForm" action="YOUR_SCRIPT_URL_HERE" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
+    <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxw_nfFiXykUDkAI2PARoWFCWhPwZFRAPBPF2RFeAXheukEe-ybmbTM8qBlNODuYWff/exec" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
       <label for="name">الاسم الكامل:</label>
       <input type="text" id="name" name="name" required>
 
