@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>سجّل في الدورة الآن</title>
+  <title>سجّل في الدورة التدريبية</title>
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
@@ -37,13 +37,26 @@
       font-weight: bold;
     }
 
-    input {
+    input, select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 16px;
+    }
+
+    .phone-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .phone-group select {
+      flex: 1;
+    }
+
+    .phone-group input {
+      flex: 2;
     }
 
     button {
@@ -76,7 +89,7 @@
 
   <div class="container">
     <h2>سجّل في الدورة التدريبية</h2>
-    <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxPvx5CXY-evqeSV6ruuTVIL74Pn1b-ZUOmGOLoBboNCaI1B-5mZ1nYL639Hj0mIN-X/exec" method="POST" target="hidden_iframe" onsubmit="showMessage()">
+    <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxPvx5CXY-evqeSV6ruuTVIL74Pn1b-ZUOmGOLoBboNCaI1B-5mZ1nYL639Hj0mIN-X/exec" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
       <label for="name">الاسم الكامل:</label>
       <input type="text" id="name" name="name" required>
 
@@ -84,16 +97,40 @@
       <input type="email" id="email" name="email" required>
 
       <label for="phone">رقم الهاتف:</label>
-      <input type="text" id="phone" name="phone">
+      <div class="phone-group">
+        <select id="countryCode" required>
+          <option value="+249">SD +249</option>
+          <option value="+20">🇪🇬 +20</option>
+          <option value="+966">🇸🇦 +966</option>
+          <option value="+971">🇦🇪 +971</option>
+          <option value="+218">🇱🇾 +218</option>
+          <option value="+962">🇯🇴 +962</option>
+          <option value="+964">🇮🇶 +964</option>
+          <option value="+212">🇲🇦 +212</option>
+          <option value="+1">🇺🇸 +1</option>
+        </select>
+        <input type="tel" id="phone" placeholder="123456789" required>
+      </div>
+
+      <!-- سيتم دمج المفتاح والرقم هنا -->
+      <input type="hidden" name="fullPhone" id="fullPhone">
 
       <button type="submit">سجّل الآن</button>
     </form>
-    <div class="success" id="successMsg">تم إرسال بياناتك بنجاح ✅</div>
+    <div class="success" id="successMsg">✅ تم إرسال بياناتك بنجاح!</div>
   </div>
 
   <iframe name="hidden_iframe" style="display:none;" onload="submitted && document.getElementById('successMsg').style.display = 'block';"></iframe>
+
   <script>
     let submitted = false;
+
+    function preparePhone() {
+      const code = document.getElementById("countryCode").value;
+      const phone = document.getElementById("phone").value.trim();
+      document.getElementById("fullPhone").value = `${code}${phone}`;
+    }
+
     function showMessage() {
       submitted = true;
       setTimeout(() => {
