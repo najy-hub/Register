@@ -99,6 +99,7 @@
       <label for="phone">رقم الهاتف:</label>
       <div class="phone-group">
         <select id="countryCode" required>
+          <option value="249">sD 249</option>
           <option value="+20">🇪🇬 +20</option>
           <option value="+966">🇸🇦 +966</option>
           <option value="+971">🇦🇪 +971</option>
