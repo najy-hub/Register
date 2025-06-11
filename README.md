@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -89,7 +90,7 @@
 
   <div class="container">
     <h2>سجّل في الدورة التدريبية</h2>
-    <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxPvx5CXY-evqeSV6ruuTVIL74Pn1b-ZUOmGOLoBboNCaI1B-5mZ1nYL639Hj0mIN-X/exec" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
+    <form id="leadForm" action="YOUR_SCRIPT_URL_HERE" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
       <label for="name">الاسم الكامل:</label>
       <input type="text" id="name" name="name" required>
 
@@ -99,7 +100,6 @@
       <label for="phone">رقم الهاتف:</label>
       <div class="phone-group">
         <select id="countryCode" required>
-          <option value="+249">SD +249</option>
           <option value="+20">🇪🇬 +20</option>
           <option value="+966">🇸🇦 +966</option>
           <option value="+971">🇦🇪 +971</option>
@@ -112,7 +112,6 @@
         <input type="tel" id="phone" placeholder="123456789" required>
       </div>
 
-      <!-- سيتم دمج المفتاح والرقم هنا -->
       <input type="hidden" name="fullPhone" id="fullPhone">
 
       <button type="submit">سجّل الآن</button>
