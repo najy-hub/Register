@@ -124,7 +124,7 @@
 
   <div class="container">
     <h2>سجّل الآن</h2>
-    <form id="leadForm" action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" method="POST">
+    <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxw_nfFiXykUDkAI2PARoWFCWhPwZFRAPBPF2RFeAXheukEe-ybmbTM8qBlNODuYWff/exec" method="POST">
       <label for="name">الاسم الكامل:</label>
       <input type="text" id="name" name="name" required />
 
