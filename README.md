@@ -156,33 +156,32 @@
   </div>
 
   <script>
-    function preparePhone() {
-      const code = document.getElementById("countryCode").value;
-      const phone = document.getElementById("phone").value.trim();
-      document.getElementById("fullPhone").value = `${code}${phone}`;
-    }
+  function preparePhone() {
+    const code = document.getElementById("countryCode").value;
+    const phone = document.getElementById("phone").value.trim();
+    document.getElementById("fullPhone").value = `${code}${phone}`;
+  }
 
-    const form = document.getElementById("leadForm");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      preparePhone();
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: "POST",
-        body: formData
-      })
-      .then((res) => res.text())
-      .then((text) => {
-        if (text.includes("success")) {
-          document.getElementById("successMsg").style.display = "block";
-          form.reset();
-        } else if (text.includes("duplicate")) {
-          alert("لقد قمت بالتسجيل مسبقاً.");
-        } else {
-          alert("حدث خطأ أثناء التسجيل، الرجاء المحاولة مرة أخرى.");
-        }
-      });
+  const form = document.getElementById("leadForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    preparePhone();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData
+    })
+    .then((res) => res.text())
+    .then((text) => {
+      if (text.includes("success")) {
+        window.location.href = "thankyou.html";
+      } else if (text.includes("duplicate")) {
+        alert("لقد قمت بالتسجيل مسبقاً.");
+      } else {
+        alert("حدث خطأ أثناء التسجيل، الرجاء المحاولة لاحقاً.");
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
