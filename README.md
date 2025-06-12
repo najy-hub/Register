@@ -174,7 +174,8 @@
       .then((res) => res.text())
       .then((text) => {
         if (text.includes("success")) {
-          window.location.href = "thankyou.html";
+          document.getElementById("successMsg").style.display = "block";
+          form.reset();
         } else if (text.includes("duplicate")) {
           alert("لقد قمت بالتسجيل مسبقاً.");
         } else {
@@ -183,28 +184,5 @@
       });
     });
   </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>شكراً لتسجيلك</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Cairo', sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h1 {
-      color: #facc15;
-    }
-  </style>
-</head>
-<body>
-  <h1>✅ شكراً لتسجيلك!</h1>
-  <p>سنتواصل معك قريباً عبر البريد الإلكتروني أو الهاتف.</p>
 </body>
 </html>
