@@ -88,8 +88,8 @@
 
       <label for="phone">رقم الهاتف:</label>
       <div class="phone-group">
-        <input type="tel" id="phone" placeholder="123456789" required />
         <select id="countryCode" required>
+       <input type="tel" id="phone" placeholder="123456789" required />
           <option value="+20">🇪🇬 +20</option>
           <option value="+966">🇸🇦 +966</option>
           <option value="+971">🇦🇪 +971</option>
