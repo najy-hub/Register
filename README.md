@@ -43,7 +43,7 @@
     }
     .phone-group {
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row;
       gap: 8px;
     }
     .phone-group select {
@@ -89,7 +89,6 @@
       <label for="phone">رقم الهاتف:</label>
       <div class="phone-group">
         <select id="countryCode" required>
-       <input type="tel" id="phone" placeholder="123456789" required />
           <option value="+20">🇪🇬 +20</option>
           <option value="+966">🇸🇦 +966</option>
           <option value="+971">🇦🇪 +971</option>
@@ -102,6 +101,7 @@
           <option value="+968">🇴🇲 +968</option>
           <option value="+1">🇺🇸 +1</option>
         </select>
+        <input type="tel" id="phone" placeholder="123456789" required />
       </div>
 
       <input type="hidden" name="fullPhone" id="fullPhone" />
