@@ -12,9 +12,10 @@
       background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
       color: #f5f5f5;
     }
+
     header {
       background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      height: 320px;
+      height: 240px;
       position: relative;
       display: flex;
       align-items: center;
@@ -22,44 +23,46 @@
       color: white;
       text-align: center;
     }
+
     header::after {
       content: "";
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.6);
     }
+
     header h1 {
       position: relative;
-      font-size: 30px;
+      font-size: 24px;
       z-index: 1;
       max-width: 90%;
+      padding: 0 10px;
       text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }
+
     .container {
       background-color: #1e1e1e;
-      padding: 30px;
-      border-radius: 16px;
+      padding: 20px;
+      border-radius: 14px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-      max-width: 450px;
-      margin: -70px auto 40px;
+      max-width: 95%;
+      margin: -60px auto 40px;
       z-index: 2;
       position: relative;
-      animation: fadeInUp 1s ease-out;
     }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+
     h2 {
       text-align: center;
-      color: #fcd34d; /* لون ذهبي */
-      margin-bottom: 20px;
+      color: #fcd34d;
+      font-size: 20px;
     }
+
     label {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
+      margin-top: 12px;
+      font-size: 14px;
     }
+
     input, select {
       width: 100%;
       padding: 10px;
@@ -68,22 +71,25 @@
       border-radius: 8px;
       background-color: #2a2a2a;
       color: #fff;
-      font-size: 16px;
+      font-size: 15px;
     }
+
     .phone-group {
       display: flex;
-      flex-direction: row;
       gap: 8px;
     }
+
     .phone-group select {
       flex: 1;
     }
+
     .phone-group input {
       flex: 2;
     }
+
     button {
       width: 100%;
-      margin-top: 25px;
+      margin-top: 20px;
       padding: 12px;
       background: linear-gradient(to right, #facc15, #fbbf24);
       color: #1a1a1a;
@@ -94,16 +100,37 @@
       cursor: pointer;
       transition: background 0.3s, transform 0.2s;
     }
+
     button:hover {
       background: linear-gradient(to right, #fde68a, #fcd34d);
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
+
     .success {
       display: none;
       text-align: center;
       color: #22c55e;
-      margin-top: 20px;
+      margin-top: 15px;
       font-weight: bold;
+      font-size: 15px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        height: 180px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+
+      .phone-group {
+        flex-direction: column;
+      }
+
+      button {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
