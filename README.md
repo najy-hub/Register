@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -12,7 +12,6 @@
       background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
       color: #f5f5f5;
     }
-
     header {
       background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       height: 240px;
@@ -23,14 +22,12 @@
       color: white;
       text-align: center;
     }
-
     header::after {
       content: "";
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.6);
     }
-
     header h1 {
       position: relative;
       font-size: 24px;
@@ -39,7 +36,6 @@
       padding: 0 10px;
       text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }
-
     .container {
       background-color: #1e1e1e;
       padding: 20px;
@@ -50,19 +46,16 @@
       z-index: 2;
       position: relative;
     }
-
     h2 {
       text-align: center;
       color: #fcd34d;
       font-size: 20px;
     }
-
     label {
       display: block;
       margin-top: 12px;
       font-size: 14px;
     }
-
     input, select {
       width: 100%;
       padding: 10px;
@@ -73,20 +66,16 @@
       color: #fff;
       font-size: 15px;
     }
-
     .phone-group {
       display: flex;
       gap: 8px;
     }
-
     .phone-group select {
       flex: 1;
     }
-
     .phone-group input {
       flex: 2;
     }
-
     button {
       width: 100%;
       margin-top: 20px;
@@ -100,12 +89,10 @@
       cursor: pointer;
       transition: background 0.3s, transform 0.2s;
     }
-
     button:hover {
       background: linear-gradient(to right, #fde68a, #fcd34d);
       transform: scale(1.02);
     }
-
     .success {
       display: none;
       text-align: center;
@@ -114,20 +101,16 @@
       font-weight: bold;
       font-size: 15px;
     }
-
     @media (max-width: 480px) {
       header {
         height: 180px;
       }
-
       header h1 {
         font-size: 20px;
       }
-
       .phone-group {
         flex-direction: column;
       }
-
       button {
         font-size: 15px;
       }
@@ -141,7 +124,7 @@
 
   <div class="container">
     <h2>سجّل الآن</h2>
-    <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxw_nfFiXykUDkAI2PARoWFCWhPwZFRAPBPF2RFeAXheukEe-ybmbTM8qBlNODuYWff/exec" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
+    <form id="leadForm" action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" method="POST">
       <label for="name">الاسم الكامل:</label>
       <input type="text" id="name" name="name" required />
 
@@ -172,22 +155,33 @@
     <div class="success" id="successMsg">✅ تم إرسال بياناتك بنجاح!</div>
   </div>
 
-  <iframe name="hidden_iframe" style="display:none;" onload="submitted && document.getElementById('successMsg').style.display = 'block';"></iframe>
-
   <script>
-    let submitted = false;
     function preparePhone() {
       const code = document.getElementById("countryCode").value;
       const phone = document.getElementById("phone").value.trim();
       document.getElementById("fullPhone").value = `${code}${phone}`;
     }
 
-    function showMessage() {
-      submitted = true;
-      setTimeout(() => {
-        document.getElementById("leadForm").reset();
-      }, 1000);
-    }
+    const form = document.getElementById("leadForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      preparePhone();
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: formData
+      })
+      .then((res) => res.text())
+      .then((text) => {
+        if (text.includes("success")) {
+          window.location.href = "thankyou.html";
+        } else if (text.includes("duplicate")) {
+          alert("لقد قمت بالتسجيل مسبقاً.");
+        } else {
+          alert("حدث خطأ أثناء التسجيل، الرجاء المحاولة مرة أخرى.");
+        }
+      });
+    });
   </script>
 </body>
 </html>
