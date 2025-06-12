@@ -1,8 +1,8 @@
 
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>سجّل في الدورة التدريبية</title>
   <style>
     body {
@@ -15,7 +15,6 @@
       align-items: center;
       height: 100vh;
     }
-
     .container {
       background-color: white;
       padding: 30px;
@@ -24,19 +23,16 @@
       max-width: 400px;
       width: 90%;
     }
-
     h2 {
       text-align: center;
       color: #1a73e8;
       margin-bottom: 20px;
     }
-
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
     }
-
     input, select {
       width: 100%;
       padding: 10px;
@@ -45,20 +41,17 @@
       border-radius: 8px;
       font-size: 16px;
     }
-
     .phone-group {
       display: flex;
+      flex-direction: row-reverse;
       gap: 8px;
     }
-
     .phone-group select {
       flex: 1;
     }
-
     .phone-group input {
       flex: 2;
     }
-
     button {
       width: 100%;
       margin-top: 25px;
@@ -71,11 +64,9 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-
     button:hover {
       background-color: #155ab6;
     }
-
     .success {
       display: none;
       text-align: center;
@@ -86,20 +77,19 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <h2>سجّل في الدورة التدريبية</h2>
     <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxw_nfFiXykUDkAI2PARoWFCWhPwZFRAPBPF2RFeAXheukEe-ybmbTM8qBlNODuYWff/exec" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
       <label for="name">الاسم الكامل:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required />
 
       <label for="email">البريد الإلكتروني:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required />
 
       <label for="phone">رقم الهاتف:</label>
       <div class="phone-group">
+        <input type="tel" id="phone" placeholder="123456789" required />
         <select id="countryCode" required>
-          <option value="249">sD 249</option>
           <option value="+20">🇪🇬 +20</option>
           <option value="+966">🇸🇦 +966</option>
           <option value="+971">🇦🇪 +971</option>
@@ -107,13 +97,14 @@
           <option value="+962">🇯🇴 +962</option>
           <option value="+964">🇮🇶 +964</option>
           <option value="+212">🇲🇦 +212</option>
+          <option value="+249">🇸🇩 +249</option>
+          <option value="+974">🇶🇦 +974</option>
+          <option value="+968">🇴🇲 +968</option>
           <option value="+1">🇺🇸 +1</option>
         </select>
-        <input type="tel" id="phone" placeholder="123456789" required>
       </div>
 
-      <input type="hidden" name="fullPhone" id="fullPhone">
-
+      <input type="hidden" name="fullPhone" id="fullPhone" />
       <button type="submit">سجّل الآن</button>
     </form>
     <div class="success" id="successMsg">✅ تم إرسال بياناتك بنجاح!</div>
