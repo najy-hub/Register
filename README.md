@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>سجّل في الدورة التدريبية</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+    @import url('https://www.canva.com/design/DAGpMbcGR9E/TnhnQq9Cwn9mQ353JcBCQQ/edit?utm_content=DAGpMbcGR9E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
     body {
       font-family: 'Cairo', sans-serif;
       margin: 0;
