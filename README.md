@@ -1,20 +1,20 @@
-
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>سجّل في الدورة التدريبية</title>
   <style>
-    @import url('https://www.canva.com/design/DAGpMbcGR9E/TnhnQq9Cwn9mQ353JcBCQQ/edit?utm_content=DAGpMbcGR9E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     body {
       font-family: 'Cairo', sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom, #f8faff, #e0ecff);
-      overflow-x: hidden;
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+      color: #f5f5f5;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      height: 300px;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      height: 320px;
       position: relative;
       display: flex;
       align-items: center;
@@ -26,21 +26,22 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.6);
     }
     header h1 {
       position: relative;
-      font-size: 32px;
+      font-size: 30px;
       z-index: 1;
       max-width: 90%;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }
     .container {
-      background-color: white;
+      background-color: #1e1e1e;
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
       max-width: 450px;
-      margin: -60px auto 40px;
+      margin: -70px auto 40px;
       z-index: 2;
       position: relative;
       animation: fadeInUp 1s ease-out;
@@ -51,7 +52,7 @@
     }
     h2 {
       text-align: center;
-      color: #1a73e8;
+      color: #fcd34d; /* لون ذهبي */
       margin-bottom: 20px;
     }
     label {
@@ -63,8 +64,10 @@
       width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border: 1px solid #ccc;
+      border: 1px solid #333;
       border-radius: 8px;
+      background-color: #2a2a2a;
+      color: #fff;
       font-size: 16px;
     }
     .phone-group {
@@ -82,22 +85,23 @@
       width: 100%;
       margin-top: 25px;
       padding: 12px;
-      background: linear-gradient(to right, #1a73e8, #5596f6);
-      color: white;
+      background: linear-gradient(to right, #facc15, #fbbf24);
+      color: #1a1a1a;
       font-size: 16px;
+      font-weight: bold;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s, transform 0.2s;
     }
     button:hover {
-      background: linear-gradient(to right, #155ab6, #3b7be0);
+      background: linear-gradient(to right, #fde68a, #fcd34d);
       transform: scale(1.03);
     }
     .success {
       display: none;
       text-align: center;
-      color: green;
+      color: #22c55e;
       margin-top: 20px;
       font-weight: bold;
     }
@@ -105,11 +109,11 @@
 </head>
 <body>
   <header>
-    <h1>انضم الآن إلى الدورة المتخصصة في الطاقة الشمسية وابدأ مستقبلك المهني!</h1>
+    <h1>ابدأ رحلتك في عالم الطاقة الشمسية باحترافية وتميّز!</h1>
   </header>
 
   <div class="container">
-    <h2>سجّل بياناتك الآن</h2>
+    <h2>سجّل الآن</h2>
     <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxw_nfFiXykUDkAI2PARoWFCWhPwZFRAPBPF2RFeAXheukEe-ybmbTM8qBlNODuYWff/exec" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
       <label for="name">الاسم الكامل:</label>
       <input type="text" id="name" name="name" required />
@@ -145,7 +149,6 @@
 
   <script>
     let submitted = false;
-
     function preparePhone() {
       const code = document.getElementById("countryCode").value;
       const phone = document.getElementById("phone").value.trim();
