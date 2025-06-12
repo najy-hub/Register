@@ -5,23 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>سجّل في الدورة التدريبية</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     body {
-      font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #f0f0f0, #d9e4f5);
+      font-family: 'Cairo', sans-serif;
       margin: 0;
-      padding: 0;
+      background: linear-gradient(to bottom, #f8faff, #e0ecff);
+      overflow-x: hidden;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      height: 300px;
+      position: relative;
       display: flex;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    header h1 {
+      position: relative;
+      font-size: 32px;
+      z-index: 1;
+      max-width: 90%;
     }
     .container {
       background-color: white;
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
-      width: 90%;
+      max-width: 450px;
+      margin: -60px auto 40px;
+      z-index: 2;
+      position: relative;
+      animation: fadeInUp 1s ease-out;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     h2 {
       text-align: center;
@@ -56,16 +82,17 @@
       width: 100%;
       margin-top: 25px;
       padding: 12px;
-      background-color: #1a73e8;
+      background: linear-gradient(to right, #1a73e8, #5596f6);
       color: white;
       font-size: 16px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
     button:hover {
-      background-color: #155ab6;
+      background: linear-gradient(to right, #155ab6, #3b7be0);
+      transform: scale(1.03);
     }
     .success {
       display: none;
@@ -77,8 +104,12 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1>انضم الآن إلى الدورة المتخصصة في الطاقة الشمسية وابدأ مستقبلك المهني!</h1>
+  </header>
+
   <div class="container">
-    <h2>سجّل في الدورة التدريبية</h2>
+    <h2>سجّل بياناتك الآن</h2>
     <form id="leadForm" action="https://script.google.com/macros/s/AKfycbxw_nfFiXykUDkAI2PARoWFCWhPwZFRAPBPF2RFeAXheukEe-ybmbTM8qBlNODuYWff/exec" method="POST" target="hidden_iframe" onsubmit="preparePhone(); showMessage();">
       <label for="name">الاسم الكامل:</label>
       <input type="text" id="name" name="name" required />
