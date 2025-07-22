@@ -1,0 +1,210 @@
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>سجّل في دورة الطاقة الشمسية</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f0fb 100%);
+      color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      height: 280px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 91, 148, 0.7);
+    }
+    header h1 {
+      position: relative;
+      font-size: 28px;
+      z-index: 1;
+      max-width: 90%;
+      padding: 0 20px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 91, 148, 0.15);
+      max-width: 500px;
+      margin: -70px auto 40px;
+      z-index: 2;
+      position: relative;
+      border: 1px solid #e1f0ff;
+    }
+    h2 {
+      text-align: center;
+      color: #005b94;
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-size: 15px;
+      color: #005b94;
+      font-weight: 500;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #d1e3f6;
+      border-radius: 8px;
+      background-color: #f5faff;
+      color: #333;
+      font-size: 15px;
+      transition: all 0.3s;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #005b94;
+      box-shadow: 0 0 0 2px rgba(0, 91, 148, 0.2);
+    }
+    .phone-group {
+      display: flex;
+      gap: 10px;
+    }
+    .phone-group select {
+      flex: 1;
+    }
+    .phone-group input {
+      flex: 2;
+    }
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 14px;
+      background: linear-gradient(to right, #0093E9, #005b94);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 91, 148, 0.2);
+    }
+    button:hover {
+      background: linear-gradient(to right, #005b94, #003d66);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 91, 148, 0.3);
+    }
+    .success {
+      display: none;
+      text-align: center;
+      color: #28a745;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px;
+      background-color: #e8f5e9;
+      border-radius: 6px;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .logo img {
+      height: 50px;
+    }
+    @media (max-width: 480px) {
+      header {
+        height: 200px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .container {
+        padding: 20px;
+        margin: -50px auto 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>دورة متخصصة في أنظمة الطاقة الشمسية - احترف التصميم والتركيب</h1>
+  </header>
+
+  <div class="container">
+    <div class="logo">
+      <img src="https://img.icons8.com/color/96/000000/solar-panel.png" alt="شعار الطاقة الشمسية">
+    </div>
+    <h2>سجل في دورة الطاقة الشمسية</h2>
+    <form id="leadForm" action="https://script.google.com/macros/s/AKfycbyqk94TFkIxmsn1v12OnFgS-ni7E8-0kBztlm43i14ydpUiAJHVrJ-L2u9W3ZuyozBg/exec" method="POST">
+      <label for="name">الاسم الكامل:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">البريد الإلكتروني:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">رقم الهاتف:</label>
+      <div class="phone-group">
+        <select id="countryCode" required>
+          <option value="+20">🇪🇬 +20</option>
+          <option value="+966">🇸🇦 +966</option>
+          <option value="+971">🇦🇪 +971</option>
+          <option value="+218">🇱🇾 +218</option>
+          <option value="+962">🇯🇴 +962</option>
+          <option value="+964">🇮🇶 +964</option>
+          <option value="+212">🇲🇦 +212</option>
+          <option value="+249">🇸🇩 +249</option>
+          <option value="+974">🇶🇦 +974</option>
+          <option value="+968">🇴🇲 +968</option>
+          <option value="+1">🇺🇸 +1</option>
+        </select>
+        <input type="tel" id="phone" placeholder="123456789" required />
+      </div>
+
+      <input type="hidden" name="fullPhone" id="fullPhone" />
+      <button type="submit">سجّل في الدورة</button>
+    </form>
+    <div class="success" id="successMsg">✅ تم إرسال بياناتك بنجاح! سنتواصل معك قريباً</div>
+  </div>
+
+  <script>
+  function preparePhone() {
+    const code = document.getElementById("countryCode").value;
+    const phone = document.getElementById("phone").value.trim();
+    document.getElementById("fullPhone").value = `${code}${phone}`;
+  }
+
+  const form = document.getElementById("leadForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    preparePhone();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData
+    })
+    .then((res) => res.text())
+    .then((text) => {
+      if (text.includes("success")) {
+        window.location.href = "thankyou.html";
+      } else if (text.includes("duplicate")) {
+        alert("لقد قمت بالتسجيل مسبقاً.");
+      } else {
+        alert("حدث خطأ أثناء التسجيل، الرجاء المحاولة لاحقاً.");
+      }
+    });
+  });
+</script>
+</body>
+</html>
